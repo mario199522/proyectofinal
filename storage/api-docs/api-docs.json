@@ -1,0 +1,279 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "Customer rate calculator API",
+        "version": "1.0.0"
+    },
+    "basePath": "/api/v0",
+    "paths": {
+        "/asignatura": {
+            "get": {
+                "tags": [
+                    "Asignatura"
+                ],
+                "summary": "Lista de Asignaturas",
+                "operationId": "getCustomerRates",
+                "responses": {
+                    "200": {
+                        "description": "registro encontrados"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Asignatura"
+                ],
+                "summary": "Crear Asignatura",
+                "operationId": "getCustomerRates",
+                "parameters": [
+                    {
+                        "name": "descripcion",
+                        "in": "formData",
+                        "description": "ingrese Asignatura",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "Asignatura creada exitosa"
+                    },
+                    "404": {
+                        "description": "no found"
+                    }
+                }
+            }
+        },
+        "/asignatura/{id}": {
+            "get": {
+                "tags": [
+                    "Asignatura"
+                ],
+                "summary": "ver asignatura con id",
+                "operationId": "getRed",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ingresar id de la asignatura",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": " operacion exitosa"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Asignatura"
+                ],
+                "summary": "Actualizar Asignatura",
+                "operationId": "Actulizar_Asignatura",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ingrese id  ",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "descripcion",
+                        "in": "formData",
+                        "description": "ingrese nueva Asignatura",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Actualizacion correcta"
+                    },
+                    "400": {
+                        "description": "identification exist"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "422": {
+                        "description": "unprocessable entity"
+                    }
+                }
+            },
+            "delete": {
+                "tags": [
+                    "Asignatura"
+                ],
+                "summary": "eliminar Asignatura",
+                "operationId": "EliminarAsignatura",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ingresar id de la Asignatura",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "asignatura eliminada"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        },
+        "/semestre": {
+            "get": {
+                "tags": [
+                    "Semestre"
+                ],
+                "summary": "Semestre",
+                "operationId": "obtenersemestre",
+                "responses": {
+                    "200": {
+                        "description": "registro obtenido"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            },
+            "post": {
+                "tags": [
+                    "Semestre"
+                ],
+                "summary": "Crear Semestre",
+                "operationId": "getCustomerRates",
+                "parameters": [
+                    {
+                        "name": "descripcion",
+                        "in": "formData",
+                        "description": "Ingresar Semestre",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "asignaturaid",
+                        "in": "formData",
+                        "description": "ingrese id ",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "201": {
+                        "description": "semestre creado"
+                    },
+                    "404": {
+                        "description": "no existe semestre"
+                    },
+                    "422": {
+                        "description": "unprocessable entity"
+                    }
+                }
+            }
+        },
+        "/semestre/{semestreid}": {
+            "get": {
+                "tags": [
+                    "Semestre"
+                ],
+                "summary": "ver Semestre con su Asignatura",
+                "operationId": "getRed",
+                "parameters": [
+                    {
+                        "name": "semestreid",
+                        "in": "path",
+                        "description": "ingresar id del semestre",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": " operacion exitosa"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            },
+            "put": {
+                "tags": [
+                    "Semestre"
+                ],
+                "summary": "Actualizar Semestre ",
+                "operationId": "shareRed",
+                "parameters": [
+                    {
+                        "name": "semestreid",
+                        "in": "path",
+                        "description": "ingrese id ",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "descripcion",
+                        "in": "formData",
+                        "description": "ingrese nuevo Semestre",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Actualizacion correcta"
+                    },
+                    "400": {
+                        "description": "identification exist"
+                    },
+                    "404": {
+                        "description": "not found"
+                    },
+                    "422": {
+                        "description": "unprocessable entity"
+                    }
+                }
+            }
+        },
+        "/semestre/{id}": {
+            "delete": {
+                "tags": [
+                    "Semestre"
+                ],
+                "summary": "eliminar Semestre",
+                "operationId": "EliminarAsignatura",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "ingresar id del Semestre",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Semestre eliminada"
+                    },
+                    "404": {
+                        "description": "not found"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {}
+}
